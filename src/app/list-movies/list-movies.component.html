@@ -2,8 +2,7 @@
 <h2>My Favourites</h2>
 </div>
 <div *ngFor="let movie of movies" class='container bg-secondary text-white pt-3 pb-3 mb-1' 
-(selectedMovie)="selectedMovie($event)" 
-(click)='clicked(movie)'
+(click)='selectMovie(movie)'
  [class.bg-info]="isSelected(movie)">
         <div class="row align-items">
             <div class="col-sm">

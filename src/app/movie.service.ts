@@ -10,6 +10,7 @@ export class MovieService {
   movie: Movie;
 
   constructor() {}
+
   moviesList = [
     new Movie('The GodFather','1972', 'Francis Ford Coppola'),
     new Movie('City of God','2002','Fernando Meirelles'),
@@ -20,7 +21,8 @@ export class MovieService {
   getMovies() {
     return this.moviesList;
   }
-  addMovie(movietitle:string, moviedirector:string, movieyear:string){
+  addMovie(movietitle:string, moviedirector:string, movieyear:string)
+  {
     this.moviesList.push(new Movie(movietitle, moviedirector, movieyear));
   }
   

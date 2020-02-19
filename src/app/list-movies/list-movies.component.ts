@@ -10,7 +10,8 @@ import { Movie } from '../movie.model'
 })
 export class ListMoviesComponent implements OnInit {
 movies=[];
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService) { this.onSelectedMovie=new EventEmitter()
+   }
   private currentMovie:Movie;
 
   ngOnInit() {
@@ -23,6 +24,17 @@ movies=[];
   movieSelected(movie:Movie):void{
     console.log ('movie selected was ', movie);
   }
+  selectMovie(myMovie:Movie):void{
+    console.log(myMovie);
+    this.currentMovie=myMovie;
+    this.onSelectedMovie.emit(myMovie);
+  }
+   isSelected(movie:Movie): boolean{
+     if (!movie || !this.currentMovie){
+       return false
+     }
+     return movie.title === this.currentMovie.title;
+   }
   
 
 }

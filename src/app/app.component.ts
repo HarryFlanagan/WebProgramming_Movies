@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MovieService } from './movie.service';
+import { Movie } from './movie.model';
 
 @Component({
   selector: 'app-root',
@@ -16,4 +17,10 @@ constructor(private movieService: MovieService) {}
     this.movies = this.movieService.getMovies();
     console.log(this.movies);
   }
+  public mySelectedMovie:Movie;
+
+  setSelectedMovie(movie:Movie){
+    this.mySelectedMovie = movie;
+  }
 }
+
